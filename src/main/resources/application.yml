@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: project01
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  datasource: 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/SB_BUS?
+    username: root 
+    password:
