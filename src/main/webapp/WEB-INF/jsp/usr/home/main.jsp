@@ -9,58 +9,53 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Coming Soon - Start Bootstrap Theme</title>
-
-        <!-- Favicon and linking static resources -->
-        <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/static/img/favicon.ico" />
-
+        <!-- 아이콘 수정 -->
+        <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-
         <!-- Google fonts-->
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" />
-
-        <!-- Core theme CSS (includes Bootstrap) -->
-        <link href="${pageContext.request.contextPath}/static/css/styles.css" rel="stylesheet" />
+        <!-- CSS 경로 수정 -->
+        <link href="/css/styles.css" rel="stylesheet" />
     </head>
     <body>
-        <!-- Background Video-->
+        <!-- Background Video 수정 -->
         <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="${pageContext.request.contextPath}/static/assets/mp4/bg.mp4" type="video/mp4" />
+            <source src="/assets/mp4/bg.mp4" type="video/mp4" />
         </video>
-
         <!-- Masthead-->
         <div class="masthead">
             <div class="masthead-content text-white">
                 <div class="container-fluid px-4 px-lg-0">
-                    <h1 class="fst-italic lh-1 mb-4">버스정류장 시스템</h1>
-                    <p class="mb-5">버스정류장을 착안하여 사용자로 하여금 
-                    <br>더 추가된 정보를 제공합니다.  </p>
+                    <h1 class="fst-italic lh-1 mb-4">Our Website is Coming Soon</h1>
+                    <p class="mb-5">We're working hard to finish the development of this site. Sign up below to receive updates and to be notified when we launch!</p>
                     <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * SB Forms Contact Form * *-->
                     <!-- * * * * * * * * * * * * * * *-->
                     <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                        <!-- 아이디 입력란 -->
-                        <div class="mb-3">
-                            <input class="form-control" id="username" type="text" placeholder="아이디를 입력해주세요..." aria-label="Enter username" data-sb-validations="required" oninput="checkInputs()" />
+                        <div class="row input-group-newsletter">
+                            <div class="col"><input class="form-control" id="email" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+                            <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
                         </div>
-                        
-                        <!-- 비밀번호 입력란 -->
-                        <div class="mb-3">
-                            <input class="form-control" id="password" type="password" placeholder="비밀번호를 입력해주세요..." aria-label="Enter password" data-sb-validations="required" oninput="checkInputs()" />
+                        <div class="invalid-feedback mt-2" data-sb-feedback="email:required">An email is required.</div>
+                        <div class="invalid-feedback mt-2" data-sb-feedback="email:email">Email is not valid.</div>
+                        <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3 mt-2">
+                                <div class="fw-bolder">Form submission successful!</div>
+                                To activate this form, sign up at
+                                <br />
+                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            </div>
                         </div>
-                        
-                        <!-- 로그인 및 회원가입 버튼 -->
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn-primary" id="submitButton" type="submit" disabled>로그인</button>
-                            <button class="btn btn-secondary" id="signupButton" type="button">회원가입</button>
+                        <div class="d-none" id="submitErrorMessage">
+                            <div class="text-center text-danger mb-3 mt-2">Error sending message!</div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-
         <!-- Social Icons-->
         <div class="social-icons">
             <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
@@ -69,27 +64,10 @@
                 <a class="btn btn-dark m-3" href="#!"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="${pageContext.request.contextPath}/static/js/scripts.js"></script>
+        <script src="js/scripts.js"></script>
         <!-- SB Forms JS-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
-        <script>
-            function checkInputs() {
-                const username = document.getElementById('username').value;
-                const password = document.getElementById('password').value;
-                const submitButton = document.getElementById('submitButton');
-
-                // Enable submit button if both username and password are entered
-                if (username && password) {
-                    submitButton.disabled = false;
-                } else {
-                    submitButton.disabled = true;
-                }
-            }
-        </script>
     </body>
 </html>
