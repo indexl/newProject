@@ -10,7 +10,3 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/SB_BUS?
     username: root 
     password:
-google:
-  maps:
-     api:
-       key: AIzaSyAFf7k5st612iyS92WMPSp49dic9_-QYMc
