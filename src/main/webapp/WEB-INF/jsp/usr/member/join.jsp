@@ -37,26 +37,26 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="First Name">
+  	                                       	placeholder="아이디">
                                     </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Last Name">
+                                    
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+  	                                       	placeholder="이름">
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Address">
-                                </div>
+                                
+                                </div>                            
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
+                                            id="exampleInputPassword" placeholder="비밀번호">
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password">
+                                            id="exampleRepeatPassword" placeholder="비밀번호 확인">
                                     </div>
+                                    
+                                   
                                 </div>
                                 <a href="login.html" class="btn btn-primary btn-user btn-block">
                                     가입하기
@@ -64,10 +64,10 @@
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="forgot-password.html">비밀번호를 잃어버리셨나요?</a>
+                                <a class="small" href="forgot-password.html">비밀번호를 잊어버리셨나요?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="/usr/member/login">기존 계정이 있다면 로그인 해주세요!</a>
+                                <a class="small" href="/usr/member/login">기존 계정이 있다면 로그인해 주세요!</a>
                             </div>
                         </div>
                     </div>
