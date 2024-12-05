@@ -7,14 +7,18 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Article {
+public class Reply {
 	private int id;
 	private String regDate;
 	private String updateDate;
 	private int memberId;
-	private String title;
+	private String relTypeCode;
+	private String relId;
 	private String body;
-	private int views;
 	
 	private String loginId;
+	
+	public String getForPrintBody( ) {
+		return this.body.replaceAll("\n", "<br />");
+	}
 }

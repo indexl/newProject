@@ -5,62 +5,82 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>버스정류장 시스템</title>
 
-    <link href="${pageContext.request.contextPath}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    <!-- Custom fonts for this template-->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
 
+    <!-- Page Wrapper -->
     <div id="wrapper">
 
+        <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
+                                           
+            <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/usr/home/main">
-                <div class="sidebar-brand-text mx-3">버스정류장<br>시스템</div>
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">버스정류장 <sup> 시스템</sup></div>
             </a>
 
+            <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
+            <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/usr/home/main">
-                    <span>Home</span>
-                </a>
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>버스정류장 시스템이란?</span></a>
             </li>
 
+            <!-- Divider -->
             <hr class="sidebar-divider">
 
+            <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                관련게시판
             </div>
 
+            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/usr/article/list" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <span>Components</span>
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>게시판</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
+                        <h6 class="collapse-header">게시판</h6>
+                        <a class="collapse-item" href="/usr/article/list?boardId=1">공지사항</a>
+                        <a class="collapse-item" href="/usr/article/list?boardId=2">문의게시판</a>
                     </div>
                 </div>
             </li>
 
+            <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <span>Utilities</span>
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>관련정보</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
@@ -74,15 +94,19 @@
                 </div>
             </li>
 
+            <!-- Divider -->
             <hr class="sidebar-divider">
 
+            <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                승차장 시스템
             </div>
 
+            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/usr/member/login" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="false" aria-controls="collapsePages">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
                     <span>Pages</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -99,98 +123,50 @@
                 </div>
             </li>
 
+            <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="charts.html">
-                    <span>Charts</span>
-                </a>
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>교통정보</span></a>
             </li>
 
+            <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <span>Tables</span>
-                </a>
+                <a class="nav-link" href="/usr/member/join">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>회원가입</span></a>
             </li>
 
+            <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
+            <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
+
+           
         </ul>
+        <!-- End of Sidebar -->
 
-        <div id="content-wrapper" class="d-flex flex-column">
-            <div id="content">
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <span>☰</span>
-                    </button>
+   
 
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <span>Profile</span>
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <span>Settings</span>
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <span>Activity Log</span>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <span>Logout</span>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    </div>
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <a class="scroll-to-top rounded" href="#page-top">
-        <span>▲</span>
-    </a>
+    <!-- Custom scripts for all pages-->
+    <script src="/js/sb-admin-2.min.js"></script>
 
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Page level plugins -->
+    <script src="/vendor/chart.js/Chart.min.js"></script>
 
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="js/sb-admin-2.min.js"></script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="/js/demo/chart-area-demo.js"></script>
+    <script src="/js/demo/chart-pie-demo.js"></script>
+    
 </body>
 </html>

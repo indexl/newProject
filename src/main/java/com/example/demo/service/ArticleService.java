@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.ArticleDao;
 import com.example.demo.dto.Article;
+import com.example.demo.dto.Board;
 
 @Service
 public class ArticleService {
@@ -16,12 +17,12 @@ public class ArticleService {
 		this.articleDao = articleDao;
 	}
 	
-	public void writeArticle(int loginedMemberId, String title, String body) {
-		articleDao.writeArticle(loginedMemberId, title, body);
+	public void writeArticle(int loginedMemberId, int boardId, String title, String body) {
+		articleDao.writeArticle(loginedMemberId, boardId, title, body);
 	}
 
-	public List<Article> getArticles() {
-		return articleDao.getArticles();
+	public List<Article> getArticles(int boardId, int limitFrom, String searchType, String searchKeyword) {
+		return articleDao.getArticles(boardId, limitFrom, searchType, searchKeyword);
 	}
 
 	public Article getArticleById(int id) {
@@ -38,5 +39,17 @@ public class ArticleService {
 
 	public int getLastInsertId() {
 		return articleDao.getLastInsertId();
+	}
+
+	public Board getBoardById(int boardId) {
+		return articleDao.getBoardById(boardId);
+	}
+
+	public int getArticlesCnt(int boardId, String searchType, String searchKeyword) {
+		return articleDao.getArticlesCnt(boardId, searchType, searchKeyword);
+	}
+
+	public void increaseViews(int id) {
+		articleDao.increaseViews(id);
 	}
 }

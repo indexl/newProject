@@ -1,67 +1,171 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>버스 정류장 검색</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" type="text/css">
-  <style>
-    body {
-      font-family: 'Noto Sans KR', sans-serif;
-    }
-    .custom-bg {
-      background-image: url('https://source.unsplash.com/1600x900/?bus,city');
-      background-size: cover;
-      background-position: center;
-      min-height: 100vh;
-    }
-  </style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>버스정류장 시스템</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
-<body class="custom-bg">
 
-  <div class="flex flex-col items-center justify-center min-h-screen bg-black bg-opacity-50 p-4">
-    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
-      <h1 class="text-3xl font-bold mb-4 text-center">버스 정류장 검색</h1>
-      <p class="mb-4 text-center text-gray-600">목적지를 입력하고 가까운 버스 정류장을 찾아보세요!</p>
-      <form id="busStationForm">
-        <div class="form-control mb-4">
-          <label class="label">
-            <span class="label-text">목적지 입력</span>
-          </label>
-          <input type="text" id="destination" class="input input-bordered w-full" placeholder="예: 서울역, 강남역">
-        </div>
-        <div class="flex justify-between">
-          <button type="button" id="searchButton" class="btn btn-primary w-1/2 mr-2">검색</button>
-          <button type="button" id="clearButton" class="btn btn-secondary w-1/2">초기화</button>
-        </div>
-      </form>
-      <div id="result" class="mt-6 hidden">
-        <h2 class="text-xl font-semibold">검색 결과</h2>
-        <p id="stationInfo" class="text-gray-700 mt-2"></p>
-      </div>
-    </div>
-  </div>
+<body id="page-top">
 
-  <script>
-    document.getElementById('searchButton').addEventListener('click', function () {
-      const destination = document.getElementById('destination').value.trim();
-      if (!destination) {
-        alert("목적지를 입력해주세요!");
-        return;
-      }
-      // 예시 API 호출 (백엔드와 연동시 대체 필요)
-      document.getElementById('stationInfo').innerText = `목적지 "${destination}" 주변의 버스 정류장을 검색 중입니다...`;
-      document.getElementById('result').classList.remove('hidden');
-    });
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
-    document.getElementById('clearButton').addEventListener('click', function () {
-      document.getElementById('destination').value = '';
-      document.getElementById('result').classList.add('hidden');
-    });
-  </script>
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/usr/home/main">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">버스정류장 <sup> 시스템</sup></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>버스정류장 시스템이란?</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                관련게시판
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>게시판</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">게시판</h6>
+                        <a class="collapse-item" href="/usr/article/list?boardId=1">공지사항</a>
+                        <a class="collapse-item" href="/usr/article/list?boardId=2">문의게시판</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>관련정보</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Utilities:</h6>
+                        <a class="collapse-item" href="utilities-color.html">Colors</a>
+                        <a class="collapse-item" href="utilities-border.html">Borders</a>
+                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
+                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                승차장 시스템
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Pages</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Login Screens:</h6>
+                        <a class="collapse-item" href="login.html">Login</a>
+                        <a class="collapse-item" href="register.html">Register</a>
+                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Other Pages:</h6>
+                        <a class="collapse-item" href="404.html">404 Page</a>
+                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>교통정보</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="/usr/member/join">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>회원가입</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+           
+        </ul>
+        <!-- End of Sidebar -->
+
+   
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/js/demo/chart-area-demo.js"></script>
+    <script src="/js/demo/chart-pie-demo.js"></script>
+    
 </body>
 </html>
