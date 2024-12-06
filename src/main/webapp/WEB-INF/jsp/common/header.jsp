@@ -4,7 +4,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -45,7 +44,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>버스정류장 시스템이란?</span></a>
             </li>
@@ -106,18 +105,18 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <span>캡쳐모드</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                        <h6 class="collapse-header">1</h6>
+                        <a class="collapse-item" href="login.html">아</a>
+                        <a class="collapse-item" href="register.html">직</a>
+                        <a class="collapse-item" href="forgot-password.html">미</a>
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <h6 class="collapse-header">2</h6>
+                        <a class="collapse-item" href="404.html">구</a>
+                        <a class="collapse-item" href="blank.html">현</a>
                     </div>
                 </div>
             </li>
@@ -135,6 +134,12 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>회원가입</span></a>
             </li>
+            
+             <li class="nav-item">
+                <a class="nav-link" href="/usr/member/login">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>로그인</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -148,7 +153,6 @@
         </ul>
         <!-- End of Sidebar -->
 
-   
 
     <!-- Bootstrap core JavaScript-->
     <script src="/vendor/jquery/jquery.min.js"></script>

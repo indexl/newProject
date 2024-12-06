@@ -5,6 +5,7 @@
 
 <c:set var="pageTitle" value="${board.getName() } 게시판" />
 
+
 <section class="mt-8">
 	<div class="container mx-auto">
 		<div class="w-9/12 mx-auto mb-2 pl-3 text-sm">

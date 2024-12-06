@@ -1,72 +1,80 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="jakarta.tags.core" prefix="c"%> 
-    
-<!DOCTYPE html>
-<html lang="en">
+<%@ taglib uri="jakarta.tags.core" prefix="c"%>
 
-<head>
+<c:set var="pageTitle" value="로그인" />
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<%@ include file="/WEB-INF/jsp/common/header.jsp" %>
 
-    <title>SB Admin 2 - Login</title>
+<script>
+	const loginForm_onSubmit = function(form) {
+		form.loginId.value = form.loginId.value.trim();
+		form.loginPw.value = form.loginPw.value.trim();
+		
+		if (form.loginId.value.length == 0) {
+			alert('아이디를 입력해주세요');
+			form.loginId.focus();
+			return;
+		}
+		
+		if (form.loginPw.value.length == 0) {
+			alert('비밀번호를 입력해주세요');
+			form.loginPw.focus();
+			return;
+		}
+		
+		form.submit();
+	}
+</script>
 
-    <!-- Custom fonts for this template-->
-    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+<section class="mt-8">
+	<div class="container mx-auto">
+		<form action="doLogin" method="post" onsubmit="loginForm_onSubmit(this); return false;">
+			<div class="w-6/12 mx-auto">
+				<table class="table table-lg">
+					<tr>
+						<td>
+							<label class="input input-bordered flex items-center gap-2">
+							  <svg
+							    xmlns="http://www.w3.org/2000/svg"
+							    viewBox="0 0 16 16"
+							    fill="currentColor"
+							    class="h-4 w-4 opacity-70">
+							    <path
+							      d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+							  </svg>
+							  <input class="grow" type="text" name="loginId" placeholder="아이디를 입력해주세요" />
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="input input-bordered flex items-center gap-2">
+							  <svg
+							    xmlns="http://www.w3.org/2000/svg"
+							    viewBox="0 0 16 16"
+							    fill="currentColor"
+							    class="h-4 w-4 opacity-70">
+							    <path
+							      fill-rule="evenodd"
+							      d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
+							      clip-rule="evenodd" />
+							  </svg>
+							  <input class="grow" type="text" name="loginPw" placeholder="비밀번호를 입력해주세요" />
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="flex justify-center">
+								<button class="btn btn-active btn-wide">로그인</button>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</div>
+</section>
 
-    <!-- Custom styles for this template-->
-    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
-
-</head>
-</html>
-<body class="bg-gradient-primary d-flex justify-content-center align-items-center" style="height: 100vh;">
-    <div class="container">
-        <div class="card o-hidden border-0 shadow-lg mx-auto" style="max-width: 500px; width: 100%;">
-            <div class="card-body p-0">
-                <div class="row justify-content-center">
-                    <div class="col-lg-12 d-flex justify-content-center">
-                        <div class="p-5" style="width: 100%;">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">로그인</h1>
-                            </div>
-                            <form class="user">
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user"
-                                        id="exampleInputEmail" aria-describedby="emailHelp"
-                                        placeholder="아이디">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control form-control-user"
-                                        id="exampleInputPassword" placeholder="비밀번호">
-                                </div>
-                                <div class="form-group">
-                                    <div class="custom-control custom-checkbox small">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                                        <label class="custom-control-label" for="customCheck">아이디 기억하기</label>
-                                    </div>
-                                </div>
-                                <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                    로그인
-                                </a>
-                            </form>
-                            <hr>
-                            <div class="text-center">
-                                <a class="small" href="forgot-password.html">비밀번호를 잊어버리셨나요?</a>
-                            </div>
-                            <div class="text-center">
-                                <a class="small" href="/usr/member/join">계정이 없다면 회원가입 해주세요!</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+<%@ include file="/WEB-INF/jsp/common/footer.jsp" %>

@@ -27,7 +27,7 @@ public class UsrMemberController {
 	public String join() {
 		return "usr/member/join";
 	}
-	
+
 	@PostMapping("/usr/member/doJoin")
 	@ResponseBody
 	public String doJoin(String loginId, String loginPw, String name) {
