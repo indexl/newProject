@@ -125,7 +125,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>교통1</span></a>
+                    <span>위도,경도 search(개발용)</span></a>
             </li>
             
             <li class="nav-item">
