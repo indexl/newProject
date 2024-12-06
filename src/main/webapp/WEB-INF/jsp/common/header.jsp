@@ -123,9 +123,33 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="/usr/api/map">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>교통정보</span></a>
+                    <span>교통1</span></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/usr/api/map2">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>교통2</span></a>
+            </li>
+            
+             <li class="nav-item">
+                <a class="nav-link" href="/usr/api/map3">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>교통3</span></a>
+            </li>
+            
+             <li class="nav-item">
+                <a class="nav-link" href="/usr/api/map4">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>교통4</span></a>
+            </li>
+            
+             <li class="nav-item">
+                <a class="nav-link" href="/usr/api/map5">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>교통5</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
