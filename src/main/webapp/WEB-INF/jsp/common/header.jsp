@@ -149,7 +149,7 @@
              <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map5">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>교통5</span></a>
+                    <span>문의사항 챗봇 서비스</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
