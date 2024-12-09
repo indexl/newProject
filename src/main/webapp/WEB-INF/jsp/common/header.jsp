@@ -24,12 +24,13 @@
 </head>
 
 <body id="page-top">
-
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+	
+	    <!-- Page Wrapper -->
+ 	   <div id="wrapper">
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/usr/home/main">
@@ -149,21 +150,47 @@
              <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map5">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>문의사항 챗봇 서비스</span></a>
+                    <span>대망의 알짜시스템</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="/usr/member/join">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>회원가입</span></a>
-            </li>
             
-             <li class="nav-item">
-                <a class="nav-link" href="/usr/member/login">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>로그인</span></a>
-            </li>
+            
+			           
+			    <c:if test="${rq.getLoginedMemberId() == -1 }">
+			    <!-- If the user is not logged in, show JOIN and LOGIN links -->
+			    <li class="nav-item">
+			        <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/join">
+			            <i class="fas fa-fw fa-table"></i>
+			            <span>회원가입</span>
+			        </a>
+			    </li>
+			    
+			    <li class="nav-item">
+			        <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/login">
+			            <i class="fas fa-fw fa-table"></i>
+			            <span>로그인</span>
+			        </a>        
+			    </li>
+			</c:if>
+			
+			<c:if test="${rq.getLoginedMemberId() != -1 }">
+			    <!-- If the user is logged in, show MYPAGE and LOGOUT links -->
+			    <li class="nav-item">
+			        <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/myPage">
+			            <i class="fas fa-fw fa-table"></i>
+			            <span>마이페이지</span>
+			        </a>
+			    </li>
+			    
+			    <li class="nav-item">
+			        <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/doLogout">
+			            <i class="fas fa-fw fa-table"></i>
+			            <span>로그아웃</span>
+			        </a>        
+			    </li>
+			</c:if>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

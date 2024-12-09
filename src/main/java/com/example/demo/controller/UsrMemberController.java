@@ -12,6 +12,7 @@ import com.example.demo.dto.Rq;
 import com.example.demo.service.MemberService;
 import com.example.demo.util.Util;
 
+import jakarta.servlet.ServletRequest;
 import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
