@@ -132,7 +132,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map2">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>교통2</span></a>
+                    <span>정류장 거리뷰</span></a>
             </li>
             
              <li class="nav-item">
@@ -150,7 +150,7 @@
              <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map5">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>대망의 알짜시스템</span></a>
+                    <span>경로</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
