@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
 
-<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+<%@ include file="/WEB-INF/jsp/common/sidebar.jsp"%>
 
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,7 @@
     <title>길찾기 결과 지도에 표출하기</title>
 </head>
 <body>
-<div id="map" style="width:100%;height:700px;"></div>
+<div id="map" style="width:100%;height:400px;"></div>
 <!-- Naver Developers에서 발급받은 네이버지도 Application Key 입력  -->
 <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ukkuio3cf4"></script>
 

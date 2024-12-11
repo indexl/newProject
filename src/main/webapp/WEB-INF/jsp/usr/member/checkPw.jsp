@@ -2,66 +2,111 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
 
-<c:set var="pageTitle" value="비밀번호 확인" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<%@ include file="/WEB-INF/jsp/common/header.jsp" %>
+    <title>비밀번호 확인</title>
 
-<script>
-	const checkPwForm_onSubmit = async function(form) {
-		form.loginPw.value = form.loginPw.value.trim();
-		
-		if (form.loginPw.value.length == 0) {
-			alert('비밀번호를 입력해주세요');
-			form.loginPw.focus();
-			return;
-		}
-		
-		let member = await getMemberById();
-		
-		if (member.data.loginPw != form.loginPw.value) {
-			alert('비밀번호가 일치하지 않습니다');
-			form.loginPw.value = '';
-			form.loginPw.focus();
-			return;
-		}
-		
-		form.submit();
-	}
-	
-	const getMemberById = function() {
-		return $.ajax({
-			url : '/usr/member/getMemberById',
-			type : 'GET',
-			dataType : 'json'
-		})
-	}
-</script>
+    <!-- Custom fonts for this template-->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
-<section class="mt-8">
-	<div class="container mx-auto">
-		<form action="doCheckPw" method="post" onsubmit="checkPwForm_onSubmit(this); return false;">
-			<div class="w-9/12 mx-auto">
-				<table class="table table-lg">
-					<tr>
-						<th>비밀번호 확인</th>
-						<td><input class="input input-bordered w-full max-w-xs" type="text" name="loginPw" placeholder="비밀번호를 입력해주세요" /></td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<div class="flex justify-center">
-								<button class="btn btn-active btn-wide">확인</button>
-							</div>
-						</td>
-					</tr>
-				</table>
-			</div>
-		</form>
-		<div class="w-9/12 mx-auto mt-3 text-sm flex justify-between">
-			<div>	
-				<button class="btn btn-active btn-sm" onclick="history.back();">뒤로가기</button>
-			</div>
-		</div>
-	</div>
-</section>
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
-<%@ include file="/WEB-INF/jsp/common/footer.jsp" %>
+    <style>
+        .bg-gradient-primary {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .card {
+            max-width: 600px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg mx-auto">
+            <div class="card-body p-0">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">비밀번호 확인</h1>
+                            </div>
+                            <form action="doCheckPw" method="post" onsubmit="checkPwForm_onSubmit(this); return false;">
+                                <div class="form-group">
+                                    <input class="form-control form-control-user" type="password" name="loginPw" placeholder="비밀번호를 입력해주세요">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-user btn-block">확인</button>
+                            </form>
+                            <div class="mt-4 text-center">
+                                <button class="btn btn-secondary btn-sm" onclick="history.back();">뒤로가기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/js/sb-admin-2.min.js"></script>
+
+    <script>
+        const checkPwForm_onSubmit = async function(form) {
+            form.loginPw.value = form.loginPw.value.trim();
+
+            if (form.loginPw.value.length == 0) {
+                alert('비밀번호를 입력해주세요');
+                form.loginPw.focus();
+                return;
+            }
+
+            let member = await getMemberById();
+
+            if (member.data.loginPw != form.loginPw.value) {
+                alert('비밀번호가 일치하지 않습니다');
+                form.loginPw.value = '';
+                form.loginPw.focus();
+                return;
+            }
+
+            form.submit();
+        }
+
+        const getMemberById = function() {
+            return $.ajax({
+                url : '/usr/member/getMemberById',
+                type : 'GET',
+                dataType : 'json'
+            });
+        }
+    </script>
+
+</body>
+</html>

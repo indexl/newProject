@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
 
-<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+<%@ include file="/WEB-INF/jsp/common/sidebar.jsp"%>
 
 <!DOCTYPE html>
 <html>
@@ -20,6 +20,7 @@
 <div id="clickLatlng"></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d39ebf45ab30101c92bd6b1126db076c&libraries=services"></script>
+
 <script>
 var mapContainer = document.getElementById('map'), 
     mapOption = { 

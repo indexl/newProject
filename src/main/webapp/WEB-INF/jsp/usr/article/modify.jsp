@@ -4,7 +4,7 @@
 
 <c:set var="pageTitle" value="수정" />
 
-<%@ include file="/WEB-INF/jsp/common/header.jsp" %>
+<%@ include file="/WEB-INF/jsp/common/sidebar.jsp" %>
 
 <script>
 	const modifyForm_onSubmit = function(form) {

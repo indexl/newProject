@@ -4,7 +4,7 @@
 
 <c:set var="pageTitle" value="글쓰기" />
 
-<%@ include file="/WEB-INF/jsp/common/header.jsp" %>
+<%@ include file="/WEB-INF/jsp/common/sidebar.jsp" %>
 
 <script>
 	const writeForm_onSubmit = function(form) {

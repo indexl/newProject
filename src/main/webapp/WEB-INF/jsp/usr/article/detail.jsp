@@ -1,10 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
 
 <c:set var="pageTitle" value="상세보기" />
 
-<%@ include file="/WEB-INF/jsp/common/header.jsp" %>
+<%@ include file="/WEB-INF/jsp/common/sidebar.jsp" %>
 
 <script>
 	$(document).ready(function() {
@@ -31,13 +30,11 @@
 	let originalId = null;
 	
 	const replyModifyForm = function(i, body) {
-		
 		if (originalForm != null) {
 			replyModifyCancle(originalId);
 		}
 		
 		let replyForm = $('#' + i);
-		
 		originalForm = replyForm.html();
 		originalId = i;
 		
@@ -49,21 +46,19 @@
 					<div id="loginedMemberLoginId" class="mt-3 mb-2 font-semibold"></div>
 					<textarea style="resize:none;" class="textarea textarea-bordered textarea-md w-full" name="body">\${body }</textarea>
 					<div class="flex justify-end mb-2">
-						<button onclick="replyModifyCancle(\${i});" type="button" class="btn btn-active btn-sm mr-2">취소</button>
+						<button onclick="replyModifyCancle(\${i});" type="button" class="btn btn-sm btn-ghost mr-2">취소</button>
 						<button class="btn btn-active btn-sm">수정</button>
 					</div>
 				</div>
 			</form>`;
-			
+		
 		replyForm.html(addHtml);
 		getLoginId();
 	}
 	
 	const replyModifyCancle = function(i) {
 		let replyForm = $('#' + i);
-		
 		replyForm.html(originalForm);
-		
 		originalForm = null;
 		originalId = null;
 	}
@@ -104,7 +99,7 @@
 			</table>
 		</div>
 		
-		<div class="w-9/12 mx-auto my-3 text-sm flex justify-between">
+		<div class="w-9/12 mx-auto my-3 text-sm flex justify-between items-center">
 			<div>	
 				<button class="btn btn-active btn-sm" onclick="history.back();">뒤로가기</button>
 			</div>
@@ -132,50 +127,50 @@
 	}
 </script>
 
-	<section class="my-5">
-		<div class="container mx-auto px-4 text-base">
-			<c:if test="${not empty replies }">
-				<div>
-					<div class="text-lg">댓글</div>
-					<c:forEach var="reply" items="${replies }">
-						<div id="${reply.getId() }" class="py-2 border-b-2 border-slate-200 pl-20">
-							<div class="flex justify-between items-center">
-								<div class="font-semibold">${reply.getLoginId() }</div>
-							    <c:if test="${rq.getLoginedMemberId() == reply.memberId }">
-							    	<div class="dropdown mr-2">
-									  <div tabindex="0" role="button" class="btn btn-sm btn-circle btn-ghost m-1">
-									  	<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-5 w-5 stroke-current">
-									      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
-									    </svg>
-									  </div>
-									  <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-24 p-2 shadow">
-									    <li><button onclick="replyModifyForm(${reply.getId() }, '${reply.getBody() }');">수정</button></li>
-									    <li><a onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;" href="/usr/reply/doDelete?id=${reply.getId() }&relId=${article.getId() }">삭제</a></li>
-									  </ul>
-									</div>
-							    </c:if>
-							</div>
-							<div class="text-lg my-1 ml-2">${reply.getForPrintBody() }</div>
-							<div class="text-xs text-gray-400">${reply.getRegDate() }</div>
-						</div>
-					</c:forEach>
-				</div>
-			</c:if>
+<section class="my-5">
+	<div class="container mx-auto px-4 text-base">
+		<c:if test="${not empty replies }">
 			<div>
-				<c:if test="${rq.getLoginedMemberId() != -1 }">
-					<form action="/usr/reply/doWrite" method="post" onsubmit="replyForm_onSubmit(this); return false;">
-						<input type="hidden" name="relTypeCode" value="article" />
-						<input type="hidden" name="relId" value="${article.getId() }" />
-						<div class="border-2 border-slate-200 rounded-xl px-4 mt-2">
-							<div id="loginedMemberLoginId" class="mt-3 mb-2 font-semibold"></div>
-							<textarea style="resize:none;" class="textarea textarea-bordered textarea-md w-full" name="body"></textarea>
-							<div class="flex justify-end mb-2">
-								<button class="btn btn-active btn-sm">작성</button>
-							</div>
+				<div class="text-lg font-semibold mb-4">댓글</div>
+				<c:forEach var="reply" items="${replies }">
+					<div id="${reply.getId() }" class="py-3 border-b-2 border-slate-200 pl-20">
+						<div class="flex justify-between items-center mb-2">
+							<div class="font-semibold text-md">${reply.getLoginId() }</div>
+							<c:if test="${rq.getLoginedMemberId() == reply.memberId }">
+								<div class="dropdown">
+									<div tabindex="0" role="button" class="btn btn-sm btn-circle btn-ghost m-1">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-5 w-5 stroke-current">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
+										</svg>
+									</div>
+									<ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-24 p-2 shadow">
+										<li><button onclick="replyModifyForm(${reply.getId() }, '${reply.getBody() }');">수정</button></li>
+										<li><a onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;" href="/usr/reply/doDelete?id=${reply.getId() }&relId=${article.getId() }">삭제</a></li>
+									</ul>
+								</div>
+							</c:if>
 						</div>
-					</form>
-				</c:if>
+						<div class="text-lg my-1 ml-2">${reply.getForPrintBody() }</div>
+						<div class="text-xs text-gray-400">${reply.getRegDate() }</div>
+					</div>
+				</c:forEach>
 			</div>
-		</div>
-	</section>
+		</c:if>
+		
+		<c:if test="${rq.getLoginedMemberId() != -1 }">
+			<form action="/usr/reply/doWrite" method="post" onsubmit="replyForm_onSubmit(this); return false;">
+				<input type="hidden" name="relTypeCode" value="article" />
+				<input type="hidden" name="relId" value="${article.getId() }" />
+				<div class="border-2 border-slate-200 rounded-xl px-4 mt-4">
+					<div id="loginedMemberLoginId" class="mt-3 mb-2 font-semibold"></div>
+					<textarea style="resize:none;" class="textarea textarea-bordered textarea-md w-full" name="body" placeholder="댓글을 작성하세요..."></textarea>
+					<div class="flex justify-end mb-2">
+						<button class="btn btn-active btn-sm">작성</button>
+					</div>
+				</div>
+			</form>
+		</c:if>
+	</div>
+</section>
+
 <%@ include file="/WEB-INF/jsp/common/footer.jsp" %>

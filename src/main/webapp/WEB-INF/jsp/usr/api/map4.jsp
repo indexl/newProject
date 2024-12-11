@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
 
-<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+<%@ include file="/WEB-INF/jsp/common/sidebar.jsp"%>
 
 <!DOCTYPE html>
 <html>
@@ -11,14 +11,9 @@
     <title>길찾기 결과 지도에 표출하기</title>
 </head>
 <body>
-<div id="map" style="width:100%;height:600px;"></div>
+<div id="map" style="width:100%;height:400px;"></div>
 <!-- Naver Developers에서 발급받은 네이버지도 Application Key 입력  -->
 <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ukkuio3cf4"></script>
-
-<div>
-    <input type="text" id="destination" placeholder="목적지를 입력하세요">
-    <button onclick="findRoute()">경로 찾기</button>
-</div>
 
 <script>
  
@@ -29,8 +24,8 @@
 
 	var map = new naver.maps.Map('map', mapOptions);
 	
-	var sx = 127.387785458133;
-	var sy = 36.3512969810495;
+	var sx = 127.3797282718;
+	var sy = 36.3510333991808;
 	var ex = 127.438104202566 ;
 	var ey = 36.3485168996579;
 	
@@ -76,7 +71,7 @@
 		}
 	}
 	
-
+	// 지도위 마커 표시해주는 함수
 	function drawNaverMarker(x,y){
 		var marker = new naver.maps.Marker({
 		    position: new naver.maps.LatLng(y, x),
@@ -84,7 +79,7 @@
 		});
 	}
 	
-
+	// 노선그래픽 데이터를 이용하여 지도위 폴리라인 그려주는 함수
 	function drawNaverPolyLine(data){
 		var lineArray;
 		
@@ -96,7 +91,7 @@
 					lineArray.push(new naver.maps.LatLng(data.result.lane[i].section[j].graphPos[k].y, data.result.lane[i].section[j].graphPos[k].x));
 				}
 				
-
+			//지하철결과의 경우 노선에 따른 라인색상 지정하는 부분 (1,2호선의 경우만 예로 들음)
 				if(data.result.lane[i].type == 1){
 					var polyline = new naver.maps.Polyline({
 					    map: map,

@@ -15,41 +15,23 @@
 
     <!-- Custom fonts for this template-->
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
-    <style>
-        /* 사이드바와 본문 영역이 겹치지 않게 하기 위한 스타일 */
-        #wrapper {
-            display: flex;
-        }
-
-        #accordionSidebar {
-            position: fixed;
-            width: 250px;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1050;
-        }
-
-        .content-wrapper {
-            margin-left: 250px; /* 사이드바 크기만큼 왼쪽 여백 추가 */
-            width: 100%;
-            padding: 20px;
-        }
-    </style>
 </head>
 
 <body id="page-top">
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+	
+	    <!-- Page Wrapper -->
+ 	   <div id="wrapper">
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/usr/home/main">
@@ -147,66 +129,69 @@
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>위도,경도 search(개발용)</span></a>
             </li>
-
+            
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map2">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>정류장 거리뷰</span></a>
             </li>
-
-            <li class="nav-item">
+            
+             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map3">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>위도 경도 브릿지</span></a>
             </li>
-
-            <li class="nav-item">
+            
+             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map4">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>교통4</span></a>
             </li>
-
-            <li class="nav-item">
+            
+             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map5">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>경로</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
-            <c:if test="${rq.getLoginedMemberId() == -1 }">
-                <!-- If the user is not logged in, show JOIN and LOGIN links -->
-                <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/join">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>회원가입</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/login">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>로그인</span>
-                    </a>
-                </li>
-
-            </c:if>
-
-            <c:if test="${rq.getLoginedMemberId() != -1 }">
-                <!-- If the user is logged in, show MYPAGE and LOGOUT links -->
-                <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/myPage">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>마이페이지</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/doLogout">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>로그아웃</span>
-                    </a>
-                </li>
-            </c:if>
+            
+            
+			           
+			    <c:if test="${rq.getLoginedMemberId() == -1 }">
+			    <!-- If the user is not logged in, show JOIN and LOGIN links -->
+			    <li class="nav-item">
+			        <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/join">
+			            <i class="fas fa-fw fa-table"></i>
+			            <span>회원가입</span>
+			        </a>
+			    </li>
+			    
+			    <li class="nav-item">
+			        <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/login">
+			            <i class="fas fa-fw fa-table"></i>
+			            <span>로그인</span>
+			        </a>        
+			    </li>
+			        
+			</c:if>
+			
+			<c:if test="${rq.getLoginedMemberId() != -1 }">
+			    <!-- If the user is logged in, show MYPAGE and LOGOUT links -->
+			    <li class="nav-item">
+			        <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/myPage">
+			            <i class="fas fa-fw fa-table"></i>
+			            <span>마이페이지</span>
+			        </a>
+			    </li>
+			    
+			    <li class="nav-item">
+			        <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/doLogout">
+			            <i class="fas fa-fw fa-table"></i>
+			            <span>로그아웃</span>
+			        </a>        
+			    </li>
+			</c:if>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -216,15 +201,11 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
+           
         </ul>
         <!-- End of Sidebar -->
 
-        <!-- Main Content Wrapper -->
-        <div class="content-wrapper">
-            <!-- 여기에 다른 페이지 내용이 들어갑니다. -->
-        </div>
 
-    </div>
     <!-- Bootstrap core JavaScript-->
     <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -235,6 +216,12 @@
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>
 
-</body>
+    <!-- Page level plugins -->
+    <script src="/vendor/chart.js/Chart.min.js"></script>
 
+    <!-- Page level custom scripts -->
+    <script src="/js/demo/chart-area-demo.js"></script>
+    <script src="/js/demo/chart-pie-demo.js"></script>
+    
+</body>
 </html>

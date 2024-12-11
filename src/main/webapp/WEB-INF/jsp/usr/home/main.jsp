@@ -4,7 +4,7 @@
 
 <c:set var="pageTitle" value="메인" />
 
-<%@ include file="/WEB-INF/jsp/common/header.jsp" %>
+<%@ include file="/WEB-INF/jsp/common/sidebar.jsp" %>
 
 <script>
 	$(document).ready(function(){

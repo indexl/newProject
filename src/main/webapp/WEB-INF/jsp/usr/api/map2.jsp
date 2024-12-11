@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
 
-<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+<%@ include file="/WEB-INF/jsp/common/sidebar.jsp"%>
     
 <!DOCTYPE html>
 <html>
@@ -29,7 +29,7 @@
 
 var mapContainer = document.getElementById('map'),
     mapOption = {
-        center: new kakao.maps.LatLng(36.3510333991808, 127.3797282718),
+        center: new kakao.maps.LatLng(36.35123316214455, 127.38050183390544),
         level: 2
     };  
 var map = new kakao.maps.Map(mapContainer, mapOption); 
@@ -40,7 +40,7 @@ var roadviewContainer = document.getElementById('roadview');
 var roadview = new kakao.maps.Roadview(roadviewContainer);
 var roadviewClient = new kakao.maps.RoadviewClient();
 
-var defaultPosition = new kakao.maps.LatLng(36.3510333991808, 127.3797282718);
+var defaultPosition = new kakao.maps.LatLng(36.35120839795718, 127.38049614316073);
 initializeMapAndRoadview(defaultPosition);
 
 function initializeMapAndRoadview(position) {
