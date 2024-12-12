@@ -52,24 +52,25 @@
                             </div>
                             <table class="table table-striped">
                                 <tr>
-                                    <th>가입일</th>
+                                    <th>가입날짜</th>
                                     <td>${member.getRegDate().substring(0, 16)}</td>
                                 </tr>
                                 <tr>
-                                    <th>정보 수정일</th>
+                                    <th>수정날짜</th>
                                     <td>${member.getUpdateDate().substring(0, 16)}</td>
                                 </tr>
                                 <tr>
-                                    <th>아이디</th>
+                                    <th>ID</th>
                                     <td>${member.getLoginId()}</td>
                                 </tr>
                                 <tr>
-                                    <th>이름</th>
+                                    <th>성명</th>
                                     <td>${member.getName()}</td>
                                 </tr>
                             </table>
-                            <div class="mt-4 d-flex justify-content-between">
+                            <div class="mt-4 text-center">
                                 <button class="btn btn-secondary btn-sm" onclick="history.back();">뒤로가기</button>
+           						<a class="btn btn-primary btn-sm" href="/usr/home/main">메인화면으로</a>    						
                                 <a class="btn btn-primary btn-sm" href="checkPw">회원정보수정</a>
                             </div>
                         </div>

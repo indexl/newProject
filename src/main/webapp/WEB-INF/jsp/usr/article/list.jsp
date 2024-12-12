@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
 <%@ include file="/WEB-INF/jsp/common/sidebar.jsp"%>
 
@@ -8,7 +7,7 @@
 <section class="min-h-screen flex items-center justify-center pt-12">
     <div class="container mx-auto bg-white shadow-lg rounded-lg p-8 w-full sm:w-9/12 md:w-8/12 lg:w-7/12 xl:w-6/12">
         <div class="text-center mb-6">
-            <h2 class="text-3xl font-semibold text-gray-800">${board.getName()} 게시판</h2>
+            <h2 class="text-3xl font-semibold text-gray-800">${board.getName()}</h2>
             <p class="text-sm text-gray-500">총 : ${articlesCnt }개</p>
         </div>
 
