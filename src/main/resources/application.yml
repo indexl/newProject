@@ -7,6 +7,10 @@ spring:
       suffix: .jsp
   datasource: 
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/SB_BUS?
+    url: jdbc:mysql://127.0.0.1:3306/BUS?
     username: root 
     password:
+
+kakao:
+  api:
+    key: d39ebf45ab30101c92bd6b1126db076c

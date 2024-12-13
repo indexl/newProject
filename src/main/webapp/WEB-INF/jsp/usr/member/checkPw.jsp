@@ -58,6 +58,7 @@
                             </form>
                             <div class="mt-4 text-center">
                                 <button class="btn btn-secondary btn-sm" onclick="history.back();">뒤로가기</button>
+                                <a class="btn btn-primary btn-sm" href="/usr/home/main">메인화면으로</a>
                             </div>
                         </div>
                     </div>

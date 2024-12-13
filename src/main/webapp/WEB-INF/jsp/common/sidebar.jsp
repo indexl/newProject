@@ -88,7 +88,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">게시판</h6>
                         <a class="collapse-item" href="/usr/article/list?boardId=1">공지사항</a>
-                        <a class="collapse-item" href="/usr/article/list?boardId=2">문의게시판</a>
+                        <a class="collapse-item" href="/usr/article/list?boardId=2">문의하기</a>
                     </div>
                 </div>
             </li>
@@ -143,7 +143,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="/usr/api/map">
+                <a class="nav-link" href="/usr/api/map1">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>위도,경도 search(개발용)</span></a>
             </li>
@@ -151,25 +151,31 @@
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map2">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>정류장 거리뷰</span></a>
+                    <span>map2</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map3">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>위도 경도 브릿지</span></a>
+                    <span>map3</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map4">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>교통4</span></a>
+                    <span>map4</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map5">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>경로</span></a>
+                    <span>map5</span></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/usr/api/map6">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>map6</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
