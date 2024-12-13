@@ -21,11 +21,7 @@ public class UsrMapController {
 	    public String showMap3() {
 	        return "usr/api/map3";
 	 }
-	 
-	 @GetMapping("/usr/api/map4")
-	    public String showMap4() {
-	        return "usr/api/map4";
-	 }
+	
 	 
 	 @GetMapping("/usr/api/map5")
 	    public String showMap5() {

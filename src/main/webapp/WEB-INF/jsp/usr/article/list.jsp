@@ -5,6 +5,7 @@
 
 <c:set var="pageTitle" value="${board.getName()} 게시판" />
 
+<<<<<<< HEAD
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
@@ -12,6 +13,13 @@
         <div class="card-header">
           <h4 class="mb-0">${board.getName()}</h4>
           <small class="text-muted">총 : ${articlesCnt}개</small>
+=======
+<section class="min-h-screen flex items-center justify-center pt-12">
+    <div class="container mx-auto bg-white shadow-lg rounded-lg p-8 w-full sm:w-9/12 md:w-8/12 lg:w-7/12 xl:w-6/12">
+        <div class="text-center mb-6">
+            <h2 class="text-3xl font-semibold text-gray-800">${board.getName()}</h2>
+            <p class="text-sm text-gray-500">총 : ${articlesCnt }개</p>
+>>>>>>> f69a36ae011612141db15df28c317a751f2b4592
         </div>
         <div class="card-body">
           <div class="mb-3">
@@ -64,6 +72,7 @@
   </div>
 </div>
 
+<<<<<<< HEAD
 <script>
   document.getElementById('searchInput').addEventListener('input', function() {
     var searchText = this.value.toLowerCase();
@@ -80,3 +89,6 @@
     }
   });
 </script>
+=======
+<%@ include file="/WEB-INF/jsp/common/footer.jsp" %>
+>>>>>>> f69a36ae011612141db15df28c317a751f2b4592

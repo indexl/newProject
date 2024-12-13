@@ -113,6 +113,7 @@
             <div class="col-md-10 detail-container">
                 <table class="table table-bordered table-detail">
                     <tr>
+<<<<<<< HEAD
                         <th>no</th>
                         <td>${article.getId() }</td>
                     </tr>
@@ -122,6 +123,17 @@
                     </tr>
                     <tr>
                         <th>수정날짜</th>
+=======
+                        <th>번호</th>
+                        <td>${article.getId() }</td>
+                    </tr>
+                    <tr>
+                        <th>작성일</th>
+                        <td>${article.getRegDate().substring(2, 16) }</td>
+                    </tr>
+                    <tr>
+                        <th>수정일</th>
+>>>>>>> f69a36ae011612141db15df28c317a751f2b4592
                         <td>${article.getUpdateDate().substring(2, 16) }</td>
                     </tr>
                     <tr>
@@ -129,7 +141,11 @@
                         <td>${article.getViews() }</td>
                     </tr>
                     <tr>
+<<<<<<< HEAD
                         <th>ID</th>
+=======
+                        <th>작성자</th>
+>>>>>>> f69a36ae011612141db15df28c317a751f2b4592
                         <td>${article.getLoginId() }</td>
                     </tr>
                     <tr>
@@ -144,9 +160,14 @@
                 
                 <div class="d-flex justify-content-between align-items-center my-3">
                     <div>	
+<<<<<<< HEAD
                         <button class="btn btn-secondary" onclick="history.back();">뒤로가기</button>               
                     </div>
                     
+=======
+                        <button class="btn btn-secondary" onclick="history.back();">뒤로가기</button>
+                    </div>
+>>>>>>> f69a36ae011612141db15df28c317a751f2b4592
                     <c:if test="${rq.getLoginedMemberId() == article.getMemberId() }">
                         <div>
                             <a class="btn btn-primary me-2" href="modify?id=${article.getId() }">수정</a>
