@@ -1,90 +1,12 @@
-server:
-  port: 8080
-  servlet:
-    context-path: /
-    encoding:
-      charset: UTF-8
-      enabled: true
-      force: true
-
 spring:
+  application:
+    name: demo
   mvc:
     view:
-      prefix: /WEB-INF/views/
+      prefix: /WEB-INF/jsp/
       suffix: .jsp
-    hiddenmethod:
-      filter:
-        enabled: true
-  
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-<<<<<<< HEAD
     url: jdbc:mysql://127.0.0.1:3306/BUS?
-    username: root 
+    username: root
     password:
-
-kakao:
-  api:
-    key: d39ebf45ab30101c92bd6b1126db076c
-=======
-    url: jdbc:mysql://localhost:3306/SB_BUS?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username: your_username
-    password: your_password
-    hikari:
-      maximum-pool-size: 10
-      minimum-idle: 5
-      idle-timeout: 300000
-
-  jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect
-    open-in-view: false
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        format_sql: true
-
-  mybatis:
-    mapper-locations: classpath:mapper/**/*.xml
-    configuration:
-      map-underscore-to-camel-case: true
-    type-aliases-package: com.example.busroute.domain
-
-  cache:
-    type: caffeine
-    caffeine:
-      spec: maximumSize=500,expireAfterWrite=1m
-
-  servlet:
-    multipart:
-      enabled: true
-      max-file-size: 10MB
-      max-request-size: 10MB
-
-  devtools:
-    livereload:
-      enabled: true
-    restart:
-      enabled: true
-
-api:
-  daejeon:
-    service-key: EfInCPvp1KaSRfM%2BCL%2FNaAOmlo%2FM%2BhjKoLRHOcQ8%2FoqhkalDqtHzKQ8KB1cdtWuNP3xVFG56nJ6WGUSpdQoWRQ%3D%3D  # 공통 인증키
-    bus:
-      base-url: https://apis.data.go.kr/6300000
-      station-path: /busStationService
-      route-path: /busRouteService
-      arrival-path: /busArrivalService
-  kakao:
-    key: d39ebf45ab30101c92bd6b1126db076c
-
-logging:
-  level:
-    root: INFO
-    com.example.busroute: DEBUG
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
->>>>>>> f69a36ae011612141db15df28c317a751f2b4592
