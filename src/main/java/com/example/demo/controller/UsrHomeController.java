@@ -31,6 +31,5 @@ public class UsrHomeController {
 		map.put("key2", key2);
 		
 		return ResultData.from("code", key1 + key2, map);
-	}
-	 
+	}	 
 }
