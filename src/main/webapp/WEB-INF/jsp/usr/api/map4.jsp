@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
 
+<%@ include file="/WEB-INF/jsp/common/sidebar.jsp"%>
+
 <%@ page import="javax.xml.parsers.*" %>
 <%@ page import="org.w3c.dom.*" %>
 <%@ page import="java.net.*" %>
@@ -95,6 +97,27 @@
             margin: 10px 0;
             font-style: italic;
         }
+        
+        .button-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+      }
+      
+      .map-button {
+          background-color: #007bff;  /* 파란색 */
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+      }
+      
+      .map-button:hover {
+          background-color: #0056b3;
+      }
     </style>
 </head>
 <body>
@@ -102,8 +125,11 @@
         <h1>버스정류장 정보</h1>
         
         <div id="lastUpdateTime"></div>
-        <button class="button" onclick="loadBusStopInfo()">정보 새로고침</button>
-        
+         <div class="button-container">
+             <button class="button" onclick="loadBusStopInfo()">정보 새로고침</button>
+             <button class="button" style="background-color: #007bff; margin-top: 30px;" onclick="location.href='/usr/api/map5'">거리뷰 확인</button>
+         </div>
+ 
         <div id="busStopInfo">
             <%
                 String serviceKey = "EfInCPvp1KaSRfM%2BCL%2FNaAOmlo%2FM%2BhjKoLRHOcQ8%2FoqhkalDqtHzKQ8KB1cdtWuNP3xVFG56nJ6WGUSpdQoWRQ%3D%3D";
@@ -165,6 +191,10 @@
                     doc.getDocumentElement().normalize();
                     
                     NodeList arrivalList = doc.getElementsByTagName("itemList");
+                    %>
+                    <div class="arrival-info">
+                        <h2>버스 도착 예정 정보</h2>
+                    <%
                     if (arrivalList.getLength() > 0) {
                         // 도착 정보를 저장할 리스트
                         List<Element> sortedArrivals = new ArrayList<>();
@@ -183,44 +213,49 @@
                                     + Integer.parseInt(getNodeValue(b, "EXTIME_SEC")) / 60;
                             return timeA - timeB;
                         });
-                        %>
-                        <div class="arrival-info">
-                            <h2>버스 도착 예정 정보</h2>
-                            <%
-                            for (Element arrivalElement : sortedArrivals) {
-                                int seconds = Integer.parseInt(getNodeValue(arrivalElement, "EXTIME_SEC"));
-                                int additionalMinutes = seconds / 60;
-                                int remainingSeconds = seconds % 60;
-                                int totalMinutes = Integer.parseInt(getNodeValue(arrivalElement, "EXTIME_MIN")) + additionalMinutes;
-                                %>
-                                <div class="bus-arrival">
-                                    <p><span class="info-label">버스번호:</span> 
-                                       <%= getNodeValue(arrivalElement, "ROUTE_NO") %>
-                                    </p>
-                                    <p><span class="info-label">도착지:</span> 
-                                       <%= getNodeValue(arrivalElement, "DESTINATION") %>
-                                    </p>
-                                    <p><span class="info-label">예상 도착 시간:</span> 
-                                       <span class="arrival-time">
-                                           <%= totalMinutes %>분 
-                                           <% if (remainingSeconds > 0) { %>
-                                               <%= remainingSeconds %>초
-                                           <% } %>
-                                       </span>
-                                    </p>
-                                    <p><span class="info-label">차량번호:</span> 
-                                       <%= getNodeValue(arrivalElement, "CAR_REG_NO") %>
-                                    </p>
-                                    <p><span class="info-label">정보 제공 시각:</span> 
-                                       <%= getNodeValue(arrivalElement, "INFO_OFFER_TM") %>
-                                    </p>
-                                </div>
-                                <%
-                            }
+
+                        for (Element arrivalElement : sortedArrivals) {
+                            int seconds = Integer.parseInt(getNodeValue(arrivalElement, "EXTIME_SEC"));
+                            int additionalMinutes = seconds / 60;
+                            int remainingSeconds = seconds % 60;
+                            int totalMinutes = Integer.parseInt(getNodeValue(arrivalElement, "EXTIME_MIN")) + additionalMinutes;
                             %>
+                            <div class="bus-arrival">
+                                <p><span class="info-label">버스번호:</span> 
+                                   <%= getNodeValue(arrivalElement, "ROUTE_NO") %>
+                                </p>
+                                <p><span class="info-label">도착지:</span> 
+                                   <%= getNodeValue(arrivalElement, "DESTINATION") %>
+                                </p>
+                                <p><span class="info-label">예상 도착 시간:</span> 
+                                   <span class="arrival-time">
+                                       <%= totalMinutes %>분 
+                                       <% if (remainingSeconds > 0) { %>
+                                           <%= remainingSeconds %>초
+                                       <% } %>
+                                   </span>
+                                </p>
+                                <p><span class="info-label">차량번호:</span> 
+                                   <%= getNodeValue(arrivalElement, "CAR_REG_NO") %>
+                                </p>
+                                <p><span class="info-label">정보 제공 시각:</span> 
+                                   <%= getNodeValue(arrivalElement, "INFO_OFFER_TM") %>
+                                </p>
+                            </div>
+                            <%
+                        }
+                    } else {
+                        %>
+                        <div class="bus-arrival">
+                            <p>현재 운행 중인 버스가 없습니다.</p>
+                            <p>* 첫차 시간 이전이거나 막차 시간 이후일 수 있습니다.</p>
                         </div>
                         <%
                     }
+                    %>
+                    </div>
+                    <%                 
+                    
                 } catch (Exception e) {
                     out.println("에러 발생: " + e.getMessage());
                 }

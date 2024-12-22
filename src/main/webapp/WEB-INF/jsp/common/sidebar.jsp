@@ -39,12 +39,10 @@
         .content-wrapper {
             margin-left: 250px; /* 사이드바 크기만큼 왼쪽 여백 추가 */
             width: 100%;
-            padding: 20px;
         }
     </style>
 </head>
 
-<body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -56,7 +54,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">정류장 <sup> 시스템</sup></div>
+                <div class="sidebar-brand-text mx-3">정류장 뷰<sup> 시스템</sup></div>
             </a>
 
             <!-- Divider -->
@@ -126,13 +124,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map4">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>대전버스</span></a>
+                    <span>대전버스정류장</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map5">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>메세지 전송</span></a>
+                    <span>정류장 뷰</span></a>
             </li>
             
             <li class="nav-item">
