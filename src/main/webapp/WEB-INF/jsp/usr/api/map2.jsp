@@ -39,7 +39,9 @@ var roadviewContainer = document.getElementById('roadview');
 var roadview = new kakao.maps.Roadview(roadviewContainer);
 var roadviewClient = new kakao.maps.RoadviewClient();
 
-var defaultPosition = new kakao.maps.LatLng(36.35120839795718, 127.38049614316073);
+//위도 36.34627, 경도 127.37883
+
+var defaultPosition = new kakao.maps.LatLng(36.34627, 127.37883);
 initializeMapAndRoadview(defaultPosition);
 
 function initializeMapAndRoadview(position) {
