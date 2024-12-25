@@ -13,73 +13,104 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-        <style>
-		    body {
-		        margin: 0;  /* body의 기본 마진 제거 */
-		        padding: 0; /* body의 기본 패딩 제거 */
-		        min-height: 100vh;  /* 최소 높이를 뷰포트 높이로 설정 */
-		        background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);  /* 전체 배경에 그라데이션 적용 */
-		    }
-		
-		    .content-section {
-		        padding: 0;  /* 패딩 제거 */
-		        min-height: 100vh;  /* 전체 높이 설정 */
-		    }
 
-        .hero-section {
-            padding: 60px 0;
-            color: white;
-            margin: 0;
-        }
+		<style>
+	    body {
+	        margin: 0;
+	        padding: 0;
+	        min-height: 100vh;
+	        background: linear-gradient(135deg, #F0FFFF 0%, #8FE5D0 100%);
+	    }
+	
+	    .content-section {
+	        padding: 0;
+	        min-height: 100vh;
+	    }
+	
+	    .hero-section {
+	        padding: 100px 0;
+	        color: #2C3E50;
+	        margin: 0;
+	        display: flex;
+	        align-items: center;
+	        justify-content: center;
+	        min-height: 60vh;
+	    }
+	
+	    .feature-card {
+	        border-radius: 15px;
+	        transition: transform 0.3s ease;
+	        background: rgba(255, 255, 255, 0.9);
+	        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	        height: 250px;
+	        display: flex;
+	        flex-direction: column;
+	        justify-content: center;
+	        border: 1px solid rgba(143, 229, 208, 0.3);
+	    }
+	
+	    .feature-card:hover {
+	        transform: translateY(-10px);
+	        box-shadow: 0 6px 12px rgba(143, 229, 208, 0.4);
+	    }
+	
+	    .icon-circle {
+	        width: 80px;
+	        height: 80px;
+	        background: #8FE5D0;
+	        border-radius: 50%;
+	        display: flex;
+	        align-items: center;
+	        justify-content: center;
+	        margin: 0 auto 20px;
+	    }
+	
+	    .icon-circle i {
+	        color: white !important;
+	    }
+	
+	    .features-container {
+	        display: flex;
+	        justify-content: center;
+	        margin: -100px auto; /* 폼을 3배 더 위로 올리기 위한 음수 마진 */
+	        max-width: 900px;
+	        padding-top: 0px; /* 상단 패딩 제거 */
+	    }
+	
+	    .custom-btn {
+	        padding: 15px 30px;
+	        border-radius: 30px;
+	        font-weight: 600;
+	        transition: all 0.3s ease;
+	        background-color: #8FE5D0 !important;
+	        border: none;
+	        color: #2C3E50 !important;
+	    }
+	
+	    .custom-btn:hover {
+	        transform: translateY(-2px);
+	        box-shadow: 0 4px 12px rgba(143, 229, 208, 0.5);
+	        background-color: #7DD1BC !important;
+	    }
+	
+	    h3.h5 {
+	        color: #2C3E50;
+	    }
+	
+	    .text-muted {
+	        color: #5D6D7E !important;
+	    }
+	
+	    .lead {
+	        color: #34495E;
+	    }
+	</style>
+	
 
-        .feature-card {
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            height: 250px;  /* 모든 카드의 높이를 동일하게 설정 */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+  
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .icon-circle {
-            width: 80px;
-            height: 80px;
-            background: #eef2ff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-        }
-
-        .features-container {
-            display: flex;
-            justify-content: center;
-            margin: 0 auto;
-            max-width: 900px;
-        }
-
-        .custom-btn {
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .custom-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
-        }
-    </style>
 </head>
 <body>
-
     <!-- 메인 콘텐츠 영역 -->
     <div class="content-section">
         <!-- Hero Section -->
@@ -87,9 +118,9 @@
             <div class="container">
                 <div class="row justify-content-center text-center">
                     <div class="col-md-8">
-                        <h1 class="display-4 fw-bold mb-4">미래의 교통을 선도합니다</h1>
-                        <p class="lead mb-5">스마트하고 효율적인 교통 솔루션으로 더 나은 미래를 만들어갑니다</p>
-                        <a href="#" class="btn btn-light btn-lg custom-btn">시작하기</a>
+                        <h1 class="display-4 fw-bold mb-4">스마트한 시스템을 제공합니다</h1>
+                        <p class="lead mb-5">효율적인 솔루션으로 더 나은 미래를 만들어 갑니다</p>
+                        <a href="/usr/api/map3" class="btn btn-lg custom-btn">시작하기</a>
                     </div>
                 </div>
             </div>
@@ -103,28 +134,28 @@
                         <div class="col-md-4">
                             <div class="feature-card p-4">
                                 <div class="icon-circle">
-                                    <i class="fas fa-bus fa-2x text-primary"></i>
+                                    <i class="fas fa-bus fa-2x"></i>
                                 </div>
-                                <h3 class="h5 text-center mb-3">스마트 버스</h3>
-                                <p class="text-muted text-center">실시간 위치 추적 및 도착 정보 제공</p>
+                                <h3 class="h5 text-center mb-3">스마트 위치</h3>
+                                <p class="text-muted text-center">실시간 위치 제공</p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="feature-card p-4">
                                 <div class="icon-circle">
-                                    <i class="fas fa-bus fa-2x text-primary"></i>
+                                    <i class="fas fa-bus fa-2x"></i>
                                 </div>
-                                <h3 class="h5 text-center mb-3">철도 서비스</h3>
-                                <p class="text-muted text-center">편리하고 신속한 철도 교통망</p>
+                                <h3 class="h5 text-center mb-3">스마트 정류장 <br>정보</h3>
+                                <p class="text-muted text-center">정류장과 노선정보<br> 제공</p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="feature-card p-4">
                                 <div class="icon-circle">
-                                    <i class="fas fa-bus fa-2x text-primary"></i>
+                                    <i class="fas fa-bus fa-2x"></i>
                                 </div>
-                                <h3 class="h5 text-center mb-3">카셰어링</h3>
-                                <p class="text-muted text-center">경제적이고 환경친화적인 이동 수단</p>
+                                <h3 class="h5 text-center mb-3">스마트 정류장 뷰</h3>
+                                <p class="text-muted text-center">정류장 사진 및 전송기능</p>
                             </div>
                         </div>
                     </div>
