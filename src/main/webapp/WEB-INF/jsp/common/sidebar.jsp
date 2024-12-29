@@ -85,8 +85,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">게시판</h6>
-                        <a class="collapse-item" href="/usr/article/list?boardId=1">공지사항</a>
-                        <a class="collapse-item" href="/usr/article/list?boardId=2">문의하기</a>
+                        <a class="collapse-item" href="/usr/article/list?boardId=1">공지 사항</a>
+                        <a class="collapse-item" href="/usr/article/list?boardId=2">문의 하기</a>
                     </div>
                 </div>
             </li>
@@ -105,13 +105,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map1">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>좌표search (개발용)</span></a>
+                    <span>좌표 search (개발용)</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map2">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>주소뷰 (개발용)</span></a>
+                    <span>주소 뷰 (개발용)</span></a>
             </li>
 
             <li class="nav-item">
