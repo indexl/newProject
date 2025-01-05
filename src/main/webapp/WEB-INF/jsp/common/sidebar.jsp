@@ -111,7 +111,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map2">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>주소뷰(개발용)</span></a>
+                    <span>주소뷰 (개발용)</span></a>
             </li>
 
             <li class="nav-item">
@@ -132,7 +132,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/join">
                         <i class="fas fa-fw fa-table"></i>
-                        <span>회원가입</span>
+                        <span>회원 가입</span>
                     </a>
                 </li>
 
@@ -150,7 +150,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/myPage">
                         <i class="fas fa-fw fa-table"></i>
-                        <span>마이페이지</span>
+                        <span>마이 페이지</span>
                     </a>
                 </li>
 
