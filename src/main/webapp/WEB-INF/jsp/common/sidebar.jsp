@@ -97,7 +97,7 @@
       
             <!-- Heading -->
             <div class="sidebar-heading">
-                승차장 시스템
+                승차장시스템
             </div>
 
        
