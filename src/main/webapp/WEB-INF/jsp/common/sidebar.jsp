@@ -105,25 +105,25 @@
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map1">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>좌표 search(개발용)</span></a>
+                    <span>좌표search(개발용)</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map2">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>주소 뷰(개발용)</span></a>
+                    <span>주소뷰(개발용)</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map3">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>QR코드 위치</span></a>
+                    <span>QR코드위치</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map4">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>정류장 정보</span></a>
+                    <span>정류장정보</span></a>
             </li>     
 
             <!-- Nav Item - Tables -->
