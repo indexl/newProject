@@ -97,7 +97,7 @@
       
             <!-- Heading -->
             <div class="sidebar-heading">
-                승차장시스템
+                승차장 시스템
             </div>
 
        
@@ -105,7 +105,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map1">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>좌표search(개발용)</span></a>
+                    <span>좌표 search(개발용)</span></a>
             </li>
 
             <li class="nav-item">
