@@ -117,13 +117,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map3">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>QR 코드위치</span></a>
+                    <span>QR코드위치</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map4">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>정류장 정보</span></a>
+                    <span>정류장정보</span></a>
             </li>     
 
             <!-- Nav Item - Tables -->
@@ -132,7 +132,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/join">
                         <i class="fas fa-fw fa-table"></i>
-                        <span>회원 가입</span>
+                        <span>회원가입</span>
                     </a>
                 </li>
 
