@@ -139,7 +139,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/login">
                         <i class="fas fa-fw fa-table"></i>
-                        <span>로그인</span>
+                        <span>로그 인</span>
                     </a>
                 </li>
 
