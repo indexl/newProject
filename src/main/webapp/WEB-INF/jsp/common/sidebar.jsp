@@ -132,14 +132,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/join">
                         <i class="fas fa-fw fa-table"></i>
-                        <span>회원 가입</span>
+                        <span>회원가입</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/login">
                         <i class="fas fa-fw fa-table"></i>
-                        <span>로그 인</span>
+                        <span>로그인</span>
                     </a>
                 </li>
 
