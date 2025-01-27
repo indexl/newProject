@@ -150,14 +150,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/myPage">
                         <i class="fas fa-fw fa-table"></i>
-                        <span>마이페이지</span>
+                        <span>마이 페이지</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/usr/member/doLogout">
                         <i class="fas fa-fw fa-table"></i>
-                        <span>로그아웃</span>
+                        <span>로그 아웃</span>
                     </a>
                 </li>
             </c:if>
