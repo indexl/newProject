@@ -123,7 +123,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/usr/api/map4">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>정류장 정보</span></a>
+                    <span>정류장정보</span></a>
             </li>     
 
             <!-- Nav Item - Tables -->
